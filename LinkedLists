@@ -37,7 +37,12 @@ class LinkedList:
     def delete_node(self, data):
         '''Delete the specific node in the list'''
         node = self.head
-        
+        if node is not None:
+            if node.data == data:
+                self.head = node.next
+                node = None
+                return
+
         while node is not None:
             if node.data == data:
                 break
@@ -46,6 +51,7 @@ class LinkedList:
 
         if node == None:
             print("No node present!")
+            return
 
         prev.next = node.next
 
@@ -81,8 +87,46 @@ if __name__ == '__main__':
 
     print("#" * 30)
 
-    linked_list.delete_node("8")
+    linked_list.delete_node("1")
 
     linked_list.print_list()
 
+    print("#" * 30)
+
+    linked_list.delete_node("8")
+    
+    
+ # OUTPUT:
+    # 
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # ##############################
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+    # ##############################
+    # 7
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+    # ##############################
+    # 7
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+    # ##############################
+    # No
+    # node
+    # present!
 
