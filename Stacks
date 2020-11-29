@@ -1,0 +1,165 @@
+# Stacks using lists
+
+stack = []
+
+def add_element(data):
+    stack.append(data)
+    print("Element added: ", data)
+
+def print_stack():
+    print(stack)
+
+def pop_element():
+    if stack is not None:
+        print("Element removed :", stack.pop())
+
+def get_size():
+    print("Size of stack :", len(stack))
+
+add_element(1)
+add_element(2)
+add_element(3)
+add_element(4)
+add_element(5)
+
+print("*"*30)
+print_stack()
+print("*"*30)
+get_size()
+print("*"*30)
+
+pop_element()
+pop_element()
+pop_element()
+
+print("*"*30)
+print_stack()
+get_size()
+print("*"*30)
+
+# OUTPUT:
+# Element added:  1
+# Element added:  2
+# Element added:  3
+# Element added:  4
+# Element added:  5
+# ******************************
+# [1, 2, 3, 4, 5]
+# ******************************
+# Size of stack : 5
+# ******************************
+# Element removed : 5
+# Element removed : 4
+# Element removed : 3
+# ******************************
+# [1, 2]
+# Size of stack : 2
+# ******************************
+
+
+
+# Stacks using queue
+
+from queue import LifoQueue
+
+stack1 = LifoQueue(maxsize= 10)
+
+def print_size():
+    print("Size of stack: ", stack1.qsize())
+
+def push_element(data):
+    if stack1.full() == True:
+        print("Stack Full")
+    else:
+        stack1.put(data)
+        print("Element added to stack: ", data)
+
+def remove_element():
+    if stack1.empty() == True:
+        print("Stack Empty")
+    else:
+        print("Element removed :", stack1.get())
+
+
+print_size()
+print("-"*30)
+push_element(1)
+push_element(2)
+push_element(3)
+push_element(4)
+push_element(5)
+print("-"*30)
+print_size()
+print("-"*30)
+push_element(6)
+push_element(7)
+push_element(8)
+push_element(9)
+push_element(10)
+print("-"*30)
+print_size()
+print("-"*30)
+push_element(11)
+print("-"*30)
+remove_element()
+remove_element()
+remove_element()
+remove_element()
+print("-"*30)
+print_size()
+print("-"*30)
+remove_element()
+remove_element()
+remove_element()
+remove_element()
+remove_element()
+remove_element()
+print("-"*30)
+print_size()
+print("-"*30)
+remove_element()
+
+# OUTPUT:
+# Size of stack:  0
+# ------------------------------
+# Element added to stack:  1
+# Element added to stack:  2
+# Element added to stack:  3
+# Element added to stack:  4
+# Element added to stack:  5
+# ------------------------------
+# Size of stack:  5
+# ------------------------------
+# Element added to stack:  6
+# Element added to stack:  7
+# Element added to stack:  8
+# Element added to stack:  9
+# Element added to stack:  10
+# ------------------------------
+# Size of stack:  10
+# ------------------------------
+# Stack Full
+# ------------------------------
+# Element removed : 10
+# Element removed : 9
+# Element removed : 8
+# Element removed : 7
+# ------------------------------
+# Size of stack:  6
+# ------------------------------
+# Element removed : 6
+# Element removed : 5
+# Element removed : 4
+# Element removed : 3
+# Element removed : 2
+# Element removed : 1
+# ------------------------------
+# Size of stack:  0
+# ------------------------------
+# Stack Empty
+
+
+
+
+
+
