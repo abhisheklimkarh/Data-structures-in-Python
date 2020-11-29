@@ -1,0 +1,113 @@
+# Queues using Lists
+
+queue = []
+
+def add_element(data):
+    print("Element added: ", data)
+    queue.append(data)
+
+def remove_element():
+    print("Element removed from start: ", queue.pop(0))
+
+def print_queue():
+    print(" ".join(map(str, queue)))
+    print("Size of Queue: ", len(queue))
+
+
+add_element(1)
+add_element(2)
+add_element(3)
+add_element(4)
+add_element(5)
+
+print("="*30)
+
+print_queue()
+
+print("="*30)
+
+remove_element()
+remove_element()
+remove_element()
+
+print("="*30)
+
+print_queue()
+
+print("="*30)
+
+# OUTPUT:
+# Element added:  1
+# Element added:  2
+# Element added:  3
+# Element added:  4
+# Element added:  5
+# ==============================
+# 1 2 3 4 5
+# Size of Queue:  5
+# ==============================
+# Element removed from start:  1
+# Element removed from start:  2
+# Element removed from start:  3
+# ==============================
+# 4 5
+# Size of Queue:  2
+# ==============================
+
+# Queue using deque
+
+from collections import deque
+
+queue1 = deque()
+
+def add_ele(data):
+    print("Element added: ", data)
+    queue1.append(data)
+
+def remove_ele():
+    print("Element removed: ", queue1.pop())
+
+def print_que():
+    print(" ".join(map(str, queue1)))
+    print("Size of Queue: ", len(queue1))
+
+add_ele(1)
+add_ele(2)
+add_ele(3)
+add_ele(4)
+add_ele(5)
+
+print("-"*30)
+
+print_que()
+
+print("-"*30)
+
+remove_ele()
+remove_ele()
+remove_ele()
+
+print("-"*30)
+
+print_que()
+
+print("-"*30)
+
+# OUTPUT:
+# 
+# Element added:  1
+# Element added:  2
+# Element added:  3
+# Element added:  4
+# Element added:  5
+# ------------------------------
+# 1 2 3 4 5
+# Size of Queue:  5
+# ------------------------------
+# Element removed:  5
+# Element removed:  4
+# Element removed:  3
+# ------------------------------
+# 1 2
+# Size of Queue:  2
+# ------------------------------
