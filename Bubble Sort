@@ -1,0 +1,23 @@
+# BUBBLE SORT
+
+def bubblesort(list):
+    for i in range(len(list)-1,0,-1):
+        for j in range(i):
+            if list[j]>list[j+1]:
+                list[j], list[j+1]= list[j+1], list[j]
+
+
+
+list = [25,17,59,65,35,24,89,99,67,102]
+print("Unsorted List:")
+print(" ".join(map(str,list)))
+bubblesort(list)
+print("Sorted List:")
+print(" ".join(map(str,list)))
+
+# OUTPUT:
+# 
+# Unsorted List:
+# 25 17 59 65 35 24 89 99 67 102
+# Sorted List:
+# 17 24 25 35 59 65 67 89 99 102
